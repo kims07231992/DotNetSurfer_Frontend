@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
-
+  vmImage: 'ubuntu-16.04'
+  
 steps:
 - task: NodeTool@0
   inputs:
@@ -20,3 +20,8 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
+
+- task: Docker@2
+  inputs:
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'

@@ -23,7 +23,6 @@ steps:
 
 - task: Docker@2
   inputs:
-    command: 'Build an image'
     Dockerfile: DotNetSurfer/Dockerfile
     azureSubscription: 'Visual Studio Professional (7699ecee-2d75-441f-a368-e4073f1e97b6)'
     azureContainerRegistry: '{"loginServer":"dotnetsurfer.azurecr.io", "id" : "/subscriptions/7699ecee-2d75-441f-a368-e4073f1e97b6/resourceGroups/iHerbDotNetSurfer/providers/Microsoft.ContainerRegistry/registries/DotNetSurfer"}'
@@ -33,7 +32,6 @@ steps:
 
 - task: Docker@2
   inputs:
-    command: 'Push an image'
     Dockerfile: DotNetSurfer/Dockerfile
     azureSubscription: 'Visual Studio Professional (7699ecee-2d75-441f-a368-e4073f1e97b6)'
     azureContainerRegistry: '{"loginServer":"dotnetsurfer.azurecr.io", "id" : "/subscriptions/7699ecee-2d75-441f-a368-e4073f1e97b6/resourceGroups/iHerbDotNetSurfer/providers/Microsoft.ContainerRegistry/registries/DotNetSurfer"}'

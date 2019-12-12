@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'DotNetSurfer'`, () => {
+  it(`should have as title 'dotnetsurfer-frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('DotNetSurfer');
+    expect(app.title).toEqual('dotnetsurfer-frontend');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to DotNetSurfer!');
+    expect(compiled.querySelector('.content span').textContent).toContain('dotnetsurfer-frontend app is running!');
   });
 });

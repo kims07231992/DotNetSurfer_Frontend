@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "DotNetSurfer": {
+    "dotnetsurfer-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,11 +17,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/DotNetSurfer",
+            "outputPath": "dist/dotnetsurfer-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -53,6 +54,11 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -61,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "DotNetSurfer:build"
+            "browserTarget": "dotnetsurfer-frontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "DotNetSurfer:build:production"
+              "browserTarget": "dotnetsurfer-frontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "DotNetSurfer:build"
+            "browserTarget": "dotnetsurfer-frontend:build"
           }
         },
         "test": {
@@ -109,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "DotNetSurfer:serve"
+            "devServerTarget": "dotnetsurfer-frontend:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "DotNetSurfer:serve:production"
+              "devServerTarget": "dotnetsurfer-frontend:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "DotNetSurfer"
+  "defaultProject": "dotnetsurfer-frontend"
 }

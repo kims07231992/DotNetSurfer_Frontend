@@ -14,8 +14,8 @@ import { SnackbarService, SnackbarAction } from '../../../../../services/shared/
 export class TopicDialogComponent implements OnInit {
   public isAddMode?: boolean;
   public topicId?: number;
-  private topic?: Topic;
-  private topicFormControl?: FormGroup;
+  public topic?: Topic;
+  public topicFormControl?: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,

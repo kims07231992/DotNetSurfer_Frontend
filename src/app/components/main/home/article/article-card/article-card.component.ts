@@ -13,9 +13,9 @@ import { SnackbarService, SnackbarAction } from '../../../../../services/shared/
 
 export class ArticleCardComponent implements OnInit {
   private readonly articleDisplayLimit = 3; // Article number to show
-  private readonly contentDisplayLength = 50; // Content string length to show
-  private isLoaded = false;
-  private articles?: Article[];
+  public readonly contentDisplayLength = 50; // Content string length to show
+  public isLoaded = false;
+  public articles?: Article[];
 
   constructor(
     private articleService: ArticleService,

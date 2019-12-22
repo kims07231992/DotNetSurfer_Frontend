@@ -16,8 +16,8 @@ export class SignUpComponent implements OnInit {
   @ViewChild(MatProgressBar, {static: true}) progressBar?: MatProgressBar;
   @ViewChild(MatButton, {static: true}) submitButton?: MatButton;
 
-  private signUpFormControl?: FormGroup;
-  private isPasswordHide?: boolean;
+  public signUpFormControl?: FormGroup;
+  public isPasswordHide?: boolean;
 
   constructor(
     private userService: UserService,

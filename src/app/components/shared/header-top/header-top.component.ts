@@ -8,8 +8,8 @@ import { HeaderService } from '../../../services/shared/header.service';
 })
 export class HeaderTopComponent implements OnInit {
   private isOpen: boolean;
-  private isMobile: boolean;
-  private adminMenuItems: any[] = [];
+  public isMobile: boolean;
+  public adminMenuItems: any[] = [];
 
   constructor(
     private headerService: HeaderService) {

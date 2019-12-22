@@ -14,11 +14,11 @@ import { SnackbarService, SnackbarAction } from '../../../../../services/shared/
 })
 
 export class ArticleDialogComponent implements OnInit {
+  public topics?: Topic[]; // for select list
   public isAddMode?: boolean;
   public articleId?: number;
-  private article?: Article;
-  private topics?: Topic[]; // for select list
-  private articleFormControl?: FormGroup;
+  public article?: Article;
+  public articleFormControl?: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,

@@ -16,9 +16,9 @@ import { SnackbarService, SnackbarAction } from '../../../../../services/shared/
 export class AnnouncementDialogComponent implements OnInit {
   public isAddMode?: boolean;
   public announcementId?: number;
-  private announcement?: Announcement;
-  private statuses?: Status[]; // for select list
-  private announcementFormControl?: FormGroup;
+  public announcement?: Announcement;
+  public statuses?: Status[]; // for select list
+  public announcementFormControl?: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,

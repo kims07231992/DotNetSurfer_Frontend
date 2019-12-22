@@ -13,11 +13,11 @@ import { SnackbarService, SnackbarAction } from '../../../../services/shared/sna
 })
 
 export class TopicTableComponent implements OnInit {
-    private title = 'Topic';
-    private displayedColumns = ['topicId', 'postDate', 'showFlag', 'pictureUrl',
+    public title = 'Topic';
+    public displayedColumns = ['topicId', 'postDate', 'showFlag', 'pictureUrl',
         'title', 'description', 'action'];
-    private isLoaded = false;
-    private dataSource?: MatTableDataSource<Topic>;
+    public isLoaded = false;
+    public dataSource?: MatTableDataSource<Topic>;
 
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     @ViewChild(MatSort, {static: true}) sort: MatSort;

@@ -6,7 +6,7 @@
 })
 
 export class CommentComponent {
-    @Input() private pageId?: string;
+    @Input() public pageId?: string;
 
     public constructor() {
 

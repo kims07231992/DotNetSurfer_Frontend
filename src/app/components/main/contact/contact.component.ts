@@ -11,8 +11,8 @@ import { Career } from '../../../models/career';
 })
 
 export class ContactComponent implements OnInit {
-  private experiences: Career[];
-  private educations: Career[];
+  public experiences: Career[];
+  public educations: Career[];
 
   constructor(
     private contactService: ContactService) {

@@ -13,9 +13,9 @@ import { SideMenuNode, SideMenuFlatNode } from '../../../models/sideMenuNode';
   animations: [fastFadeInAnimation]
 })
 export class HeaderSideComponent implements OnInit {
-  private isOpen: boolean;
-  private isMobile: boolean;
-  private menuItems: any[] = [];
+  public isOpen: boolean;
+  public isMobile: boolean;
+  public menuItems: any[] = [];
 
   treeControl: FlatTreeControl<SideMenuFlatNode>;
   treeFlattener: MatTreeFlattener<SideMenuNode, SideMenuFlatNode>;
@@ -31,7 +31,7 @@ export class HeaderSideComponent implements OnInit {
 
   private _getChildren = (node: SideMenuNode): Observable<SideMenuNode[]> => observableOf(node.sideNodes);
 
-  private hasChild = (_: number, _nodeData: SideMenuFlatNode) => _nodeData.expandable;
+  public hasChild = (_: number, _nodeData: SideMenuFlatNode) => _nodeData.expandable;
 
   constructor(
     private headerService: HeaderService) {

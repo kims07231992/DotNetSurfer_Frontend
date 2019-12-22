@@ -14,20 +14,20 @@ export class PictureUploaderComponent implements OnInit {
   @Output() private uploadedPictureBase64 = new EventEmitter<string>();
   @Output() private uploadedPictureMimeType = new EventEmitter<string>();
 
-  private uploadedPictureFile?: File;
   private uploadedPictureSrc?: string;
-
   private acceptedExtension?: string;
   private acceptedPattern?: RegExp;
 
-  private isBrowsable?: boolean;
-  private isUploaded?: boolean;
-  private isCancelable?: boolean;
-  private isRemovable?: boolean;
+  public uploadedPictureFile?: File;
 
-  private currentPictureBase64?: string;
-  private currentPictureMimeType?: string;
-  private currentStatus?: string;
+  public isBrowsable?: boolean;
+  public isUploaded?: boolean;
+  public isCancelable?: boolean;
+  public isRemovable?: boolean;
+
+  public currentPictureBase64?: string;
+  public currentPictureMimeType?: string;
+  public currentStatus?: string;
 
   public constructor(
     private snackbarService: SnackbarService) {

@@ -15,8 +15,8 @@ export class SignInComponent implements OnInit {
   @ViewChild(MatProgressBar, {static: true}) private progressBar?: MatProgressBar;
   @ViewChild(MatButton, {static: true}) private submitButton?: MatButton;
 
-  private signInFormControl?: FormGroup;
-  private isPasswordHide?: boolean;
+  public signInFormControl?: FormGroup;
+  public isPasswordHide?: boolean;
 
   constructor(
     private userService: UserService,

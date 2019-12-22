@@ -13,12 +13,12 @@ import { SnackbarService, SnackbarAction } from '../../../../services/shared/sna
 })
 
 export class ArticleTableComponent implements OnInit {
-  private readonly title = 'Article';
-  private readonly contentDisplayLength = 100; // Content string length to show
-  private readonly displayedColumns = ['articleId', 'postDate',
+  public readonly title = 'Article';
+  public readonly contentDisplayLength = 100; // Content string length to show
+  public readonly displayedColumns = ['articleId', 'postDate',
     'showFlag', 'pictureUrl', 'title', 'content', 'action'];
-  private isLoaded = false;
-  private dataSource?: MatTableDataSource<Article>;
+  public isLoaded = false;
+  public dataSource?: MatTableDataSource<Article>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;

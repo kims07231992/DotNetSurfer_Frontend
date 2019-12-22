@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class TextEditorComponent {
-    @Input() private content?: string;
+    @Input() public content?: string;
 
     @Output() private changedContent = new EventEmitter<string>();
 

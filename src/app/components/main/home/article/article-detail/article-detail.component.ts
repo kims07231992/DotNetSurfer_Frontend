@@ -14,9 +14,9 @@ import { SnackbarService, SnackbarAction } from '../../../../../services/shared/
 })
 
 export class ArticleDetailComponent implements OnInit {
-  private isLoaded = false;
-  private article?: Article;
-  private commentPageId?: string;
+  public isLoaded = false;
+  public article?: Article;
+  public commentPageId?: string;
 
   constructor(
     private router: Router,

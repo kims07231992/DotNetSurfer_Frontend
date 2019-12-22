@@ -15,10 +15,10 @@ export class ArticleListComponent implements OnInit {
   private readonly contentDisplayLength = 50; // Content string length to show
   private page = 1;
   private itemPerPage = 3;
-  private isLoaded = false;
-  private isAllLoaded = false;
-  private isExpanded = true;
-  private articles?: Article[];
+  public isLoaded = false;
+  public isAllLoaded = false;
+  public isExpanded = true;
+  public articles?: Article[];
 
   constructor(
     private articleService: ArticleService,

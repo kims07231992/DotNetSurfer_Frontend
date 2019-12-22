@@ -11,11 +11,11 @@ import { SnackbarService, SnackbarAction } from '../../../services/shared/snackb
 })
 
 export class ProfileComponent implements OnInit {
-    private user?: User;
-    private title = 'Profile';
-    private profileFormControl?: FormGroup;
-    private passwordFormControl?: FormGroup;
-    private isPasswordHide?: boolean;
+    public user?: User;
+    public title = 'Profile';
+    public profileFormControl?: FormGroup;
+    public passwordFormControl?: FormGroup;
+    public isPasswordHide?: boolean;
 
     public constructor(
       private formBuilder: FormBuilder,

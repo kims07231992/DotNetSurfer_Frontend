@@ -9,8 +9,8 @@ import { SnackbarService, SnackbarAction } from '../../../../services/shared/sna
   styleUrls: ['./about-frontend.component.scss']
 })
 export class AboutFrontendComponent implements OnInit {
-  private isLoaded = false;
-  private features: Feature[];
+  public isLoaded = false;
+  public features: Feature[];
 
   constructor(
     private aboutService: AboutService,

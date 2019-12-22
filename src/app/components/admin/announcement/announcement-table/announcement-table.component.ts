@@ -13,10 +13,10 @@ import { SnackbarService, SnackbarAction } from '../../../../services/shared/sna
 })
 
 export class AnnouncementTableComponent implements OnInit {
-  private isLoaded = false;
-  private title = 'Announcement';
-  private displayedColumns = ['announcementId', 'postDate', 'showFlag', 'content', 'status', 'action'];
-  private dataSource?: MatTableDataSource<Announcement>;
+  public isLoaded = false;
+  public title = 'Announcement';
+  public displayedColumns = ['announcementId', 'postDate', 'showFlag', 'content', 'status', 'action'];
+  public dataSource?: MatTableDataSource<Announcement>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;

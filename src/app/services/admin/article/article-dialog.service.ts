@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Article } from '../../../models/Article';
+import { Article } from '../../../models/article';
 import { User } from '../../../models/user';
 import { UserService } from '../../admin/user/user.service';
 import { JWTGatewayService } from '../../shared/jwtgateway.service';

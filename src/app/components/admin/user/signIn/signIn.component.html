@@ -12,8 +12,7 @@
                   (ngSubmit)="signIn()"
                   fxLayout="column" fxLayoutGap="20px">
                 <mat-form-field hintLabel="Please enter your email">
-                    <input [type]="text"
-                           name="email"
+                    <input name="email"
                            matInput #emailInput
                            [formControl]="signInFormControl.controls['email']"
                            placeholder="Email"

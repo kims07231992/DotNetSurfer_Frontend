@@ -13,8 +13,7 @@
                   fxLayout="column" fxLayoutGap="20px">
 
                 <mat-form-field hintLabel="Please enter your email">
-                    <input [type]="text"
-                           name="email"
+                    <input name="email"
                            matInput #emailInput
                            [formControl]="signUpFormControl.controls['email']"
                            placeholder="Email"
@@ -23,8 +22,7 @@
                 </mat-form-field>
 
                 <mat-form-field hintLabel="Max 20 characters">
-                    <input [type]="text"
-                           name="name"
+                    <input name="name"
                            matInput #nameInput
                            [formControl]="signUpFormControl.controls['name']"
                            placeholder="Name"

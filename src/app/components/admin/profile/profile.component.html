@@ -38,8 +38,7 @@
                     fxLayout="column" fxLayoutGap="15px">
                 <ng-template matStepLabel>Fill out your profile</ng-template>
                 <mat-form-field hintLabel="Max 20 characters">
-                  <input [type]="text"
-                         name="name"
+                  <input name="name"
                          matInput #nameInput
                          [formControl]="profileFormControl.controls['name']"
                          placeholder="Name"
@@ -49,8 +48,7 @@
                 </mat-form-field>
 
                 <mat-form-field hintLabel="Please enter your email">
-                  <input [type]="text"
-                         name="email"
+                  <input name="email"
                          matInput #emailInput
                          [formControl]="profileFormControl.controls['email']"
                          placeholder="Email"
@@ -60,8 +58,7 @@
                 </mat-form-field>
 
                 <mat-form-field hintLabel="Max 20 characters">
-                  <input [type]="text"
-                         name="title"
+                  <input name="title"
                          matInput #titleInput
                          [formControl]="profileFormControl.controls['title']"
                          placeholder="Title"
@@ -70,8 +67,7 @@
                 </mat-form-field>
 
                 <mat-form-field hintLabel="Please enter your phone number">
-                  <input [type]="text"
-                         name="phone"
+                  <input name="phone"
                          matInput #phoneInput
                          [formControl]="profileFormControl.controls['phone']"
                          placeholder="Phone"
@@ -80,8 +76,7 @@
                 </mat-form-field>
 
                 <mat-form-field hintLabel="Max 100 characters">
-                  <input [type]="text"
-                         name="adress"
+                  <input name="adress"
                          matInput #addressInput
                          [formControl]="profileFormControl.controls['address']"
                          placeholder="Address"
@@ -90,8 +85,7 @@
                 </mat-form-field>
 
                 <mat-form-field hintLabel="Max 100 characters">
-                  <input [type]="text"
-                         name="introduction"
+                  <input name="introduction"
                          matInput #introductionInput
                          [formControl]="profileFormControl.controls['introduction']"
                          placeholder="Introduction"
@@ -125,7 +119,7 @@
               </div>
             </mat-step>
 
-            <mat-step [stepControl]="passwordFormGroup">
+            <mat-step [stepControl]="passwordFormControl">
               <form [formGroup]="passwordFormControl"
                     (ngSubmit)="updateProfile()"
                     fxLayout="column" fxLayoutGap="15px">

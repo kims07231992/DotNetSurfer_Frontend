@@ -1,0 +1,32 @@
+@import '../../../../styles/constants';
+
+.footer-container {
+  height: 40px;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-list {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 8px;
+}
+
+.footer-list a, a:link, a:visited {
+  text-decoration: none;
+  color: #7986cb;
+}
+
+.footer-list a:hover, a:active {
+  color: #1a237e;
+}
+
+@media (max-width: $breakpoint-width-mobile) {
+  .footer-list {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,48 @@
+<div class="admin-dialog-container">
+  <h1 mat-dialog-title>{{isAddMode ? 'Create' : 'Edit'}}</h1>
+
+  <mat-dialog-content>
+    <div fxLayout="column" fxLayoutGap="15px">
+      <mat-form-field fxFlex="10">
+        <input matInput #titleInput
+               [formControl]="topicFormControl.controls['title']"
+               placeholder="Title"
+               [(ngModel)]="topic.title">
+        <mat-hint align="end">{{titleInput.value?.length || 0}}/20</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="10">
+        <input matInput [matDatepicker]="picker" placeholder="Post Date" [(ngModel)]="topic.postDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="10">
+        <textarea matInput #descriptionInput
+                  [formControl]="topicFormControl.controls['description']"
+                  placeholder="Description"
+                  [(ngModel)]="topic.description"></textarea>
+        <mat-hint align="end">{{descriptionInput.value?.length || 0}}/200</mat-hint>
+      </mat-form-field>
+
+      <div fxLayoutAlign="start center" fxFlex="10">
+        <span>Show&nbsp;</span>
+        <mat-slide-toggle [(ngModel)]="topic.showFlag"></mat-slide-toggle>
+      </div>
+
+      <div fxFlex="50">
+        <app-picture-uploader *ngIf="topic"
+                              [picture]="topic.picture"
+                              [pictureMimeType]="topic.pictureMimeType"
+                              (uploadedPictureBase64)="uploadPictureBase64($event)"
+                              (uploadedPictureMimeType)="uploadPictureMimeType($event)">
+        </app-picture-uploader>
+      </div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayout="row" fxLayoutAlign="end stretch">
+    <button mat-raised-button (click)="submitTopic()" [disabled]="topicFormControl.invalid">Submit</button>
+    <button mat-raised-button (click)="closeDialog()">Close</button>
+  </mat-dialog-actions>
+</div>

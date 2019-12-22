@@ -1,0 +1,34 @@
+@import '../../../../styles/constants';
+
+.sidenav-container {
+  width: 260px;
+  position: fixed;
+  padding-top: 56px;
+
+  .sidenav-main {
+    padding-left: 10px;
+    text-transform: uppercase;
+  }
+
+  .sidenav-topic {
+    padding-left: 14px;
+    text-transform: uppercase;
+  }
+
+  .sidenav-article {
+    padding-right: 5px;
+  }
+}
+
+mat-tree-node:hover {
+  cursor: default;
+  background-color: #dbdbdb;
+  color: #1976d2;
+  text-shadow: 0 0 5px #fff;
+
+  @media (max-width: $breakpoint-width-mobile) {
+    background-color: inherit;
+    color: inherit;
+    text-shadow: inherit;
+  }
+}

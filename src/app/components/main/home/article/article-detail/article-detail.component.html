@@ -1,0 +1,19 @@
+<div *ngIf="!isLoaded" class="spinner-container-large">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="isLoaded" @fadeInAnimation>
+  <div class="primary-header">
+    <h1>{{article.topic.title}}</h1>
+  </div>
+  <div class="article-wrapper">
+    <div class="article-toc-and-content">
+      <div class="article-content">
+        <h1 class="markdown">{{article.title}}</h1>
+        <span [innerHTML]="article.content"></span>
+      </div>
+    </div>
+    <div class="comment-content">
+      <app-comment [pageId]="commentPageId"></app-comment>
+    </div>
+  </div>
+</div>

@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'dotnetsurfer-frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('dotnetsurfer-frontend');
+    expect(app.title).toEqual('.NETSurfer');
   });
 
   it('should render title', () => {

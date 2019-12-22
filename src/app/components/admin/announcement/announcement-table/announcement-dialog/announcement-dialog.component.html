@@ -1,0 +1,38 @@
+<div class="admin-dialog-container">
+  <div fxLayout="column" fxLayoutGap="40px">
+    <h3 mat-dialog-title fxFlex>{{isAddMode ? 'Create' : 'Edit'}}</h3>
+
+    <mat-form-field hintLabel="Max 100 characters" fxFlex>
+      <textarea matInput #contentInput
+                [formControl]="announcementFormControl.controls['content']"
+                placeholder="Leave a comment"
+                [(ngModel)]="announcement.content"></textarea>
+      <mat-hint align="end">{{contentInput.value?.length || 0}}/100</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field fxFlex>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="announcement.postDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field fxFlex>
+      <mat-select placeholder="Status" [(ngModel)]="announcement.statusId" name="status">
+        <mat-option *ngFor="let status of statuses" [value]="status.statusId">
+          {{status.currentStatus}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="announcement.showFlag" fxFlex>
+      <span>Show</span>
+    </mat-checkbox>
+
+    <div fxFlexAlign="end">
+      <mat-dialog-actions fxLayout="row" fxLayoutAlign="end stretch">
+        <button mat-raised-button (click)="submitAnnouncement()" [disabled]="announcementFormControl.invalid">{{isAddMode ? 'Create' : 'Edit'}}</button>
+        <button mat-raised-button (click)="closeDialog()">Close</button>
+      </mat-dialog-actions>
+    </div>
+  </div>
+</div>

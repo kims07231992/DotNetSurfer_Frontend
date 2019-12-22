@@ -1,0 +1,24 @@
+.article-card-header .mat-display-2 {
+    margin: unset;
+}
+
+.article-card {
+    width: 320px;
+    height: 500px;
+    margin: 35px 0;
+}
+
+.article-card-header-image {
+    background-size: cover;
+}
+
+.article-card .mat-card-image {
+    width: 320px;
+    height: 230px;
+}
+
+.article-card .mat-card-actions {
+    position: absolute;
+    top:448px;
+    right: 25px;
+}

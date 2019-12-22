@@ -1,0 +1,23 @@
+.header-top-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.flex-spacer {
+  flex-grow: 1;
+}
+
+.logo-text {
+  padding-left: 3px;
+  color: white;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+.logo-text a, a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}

@@ -1,0 +1,63 @@
+<div class="admin-dialog-container">
+  <div fxLayout="column" fxLayoutGap="25px">
+    <h1 mat-dialog-title>{{isAddMode ? 'Create' : 'Edit'}}</h1>
+
+    <mat-form-field fxFlex>
+      <input matInput #titleInput
+             [formControl]="articleFormControl.controls['title']"
+             placeholder="Title"
+             [(ngModel)]="article.title">
+      <mat-hint align="end">{{titleInput.value?.length || 0}}/100</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field fxFlex>
+      <input matInput [matDatepicker]="picker" placeholder="Post Date" [(ngModel)]="article.postDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field fxFlex>
+      <input matInput #categoryInput
+             [formControl]="articleFormControl.controls['category']"
+             placeholder="Category"
+             [(ngModel)]="article.category">
+      <mat-hint align="end">{{categoryInput.value?.length || 0}}/10</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field fxFlex>
+      <mat-select placeholder="Topic" [(ngModel)]="article.topicId" name="topic">
+        <mat-option *ngFor="let topic of topics" [value]="topic.topicId">
+          {{topic.title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div fxLayoutAlign="start center" fxFlex>
+      <span>Show&nbsp;</span>
+      <mat-slide-toggle [(ngModel)]="article.showFlag"></mat-slide-toggle>
+    </div>
+
+    <div fxFlex>
+      <app-editor [content]="article.content"
+                  (changedContent)="saveContent($event)">
+      </app-editor>
+    </div>
+
+    <div fxFlex>
+      <span>Picture</span>
+      <app-picture-uploader *ngIf="article"
+                            [picture]="article.picture"
+                            [pictureMimeType]="article.pictureMimeType"
+                            (uploadedPictureBase64)="uploadPictureBase64($event)"
+                            (uploadedPictureMimeType)="uploadPictureMimeType($event)">
+      </app-picture-uploader>
+    </div>
+
+    <div fxFlexAlign="end">
+      <mat-dialog-actions fxLayout="row" fxLayoutAlign="end stretch">
+        <button mat-raised-button (click)="submitArticle()" [disabled]="articleFormControl.invalid">Submit</button>
+        <button mat-raised-button (click)="closeDialog()">Close</button>
+      </mat-dialog-actions>
+    </div>
+  </div>
+</div>

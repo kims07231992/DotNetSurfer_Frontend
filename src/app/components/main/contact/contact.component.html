@@ -1,0 +1,90 @@
+<div class="contact-container" @fadeInAnimation>
+  <header class="header-background">
+    <div class="header-section">
+      <div class="header-headline">
+        <h1 class="mat-h1" fxHide.xs>Get In Touch</h1>
+        <h2>I am always standing by and eager to help.</h2>
+      </div>
+    </div>
+  </header>
+  <div class="contact-content-container">
+    <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+      <div class="contact-profile-content" fxFlex="35">
+        <mat-card>
+          <div class="contact-profile-image">
+            <img src="/assets/Images/contact/jason_kim.jpg" alt="Jason Kim">
+          </div>
+          <div class="contact-profile-content">
+            <div class="contact-name mat-h2">
+              Jason Kim
+            </div>
+            <div class="contact-profile-title mat-h3">
+              Software Developer
+            </div>
+            <div class="contact-profile-location mat-h5">
+              Irvine, CA
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <div fxFlex="5"><span class="flex-spacer"></span></div>
+      <div class="contact-career-content" fxFlex="65">
+        <mat-accordion>
+          <mat-expansion-panel expanded="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="contact-career-title mat-h1">
+                Experience
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-list>
+              <mat-list-item *ngFor="let experience of experiences">
+                <div class="contact-career-image">
+                  <img *ngIf="experience.imageUrl"
+                       src="{{experience.imageUrl}}">
+                  <img *ngIf="!experience.imageUrl"
+                       src="/assets/Images/default/default-experience.png"
+                       alt="default-experience">
+                </div>
+                <h4 mat-line>{{experience.title}}</h4>
+                <h3 mat-line>{{experience.name}}</h3>
+                <p class="contact-career-date" mat-line>
+                  <span>{{experience.fromDate | date:'MMM yyyy'}} - </span>
+                  <span *ngIf="experience.toDate">{{experience.toDate | date:'MMM yyyy'}}</span>
+                  <span *ngIf="!experience.toDate">Present</span>
+                </p>
+                <p class="contact-career-location" mat-line> {{experience.location}}</p>
+              </mat-list-item>
+            </mat-list>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="contact-career-title mat-h1">
+                Education
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-list>
+              <mat-list-item *ngFor="let education of educations">
+                <div class="contact-career-image">
+                  <img *ngIf="education.imageUrl"
+                       src="{{education.imageUrl}}">
+                  <img *ngIf="!education.imageUrl"
+                       src="/assets/Images/default/default-education.png"
+                       alt="default-education">
+                </div>
+                <h4 mat-line>{{education.name}}</h4>
+                <h3 mat-line>{{education.title}}</h3>
+                <p class="contact-career-date" mat-line>
+                  <span>{{education.fromDate | date:'MMM yyyy'}} - </span>
+                  <span *ngIf="education.toDate">{{education.toDate | date:'MMM yyyy'}}</span>
+                  <span *ngIf="!education.toDate">Present</span>
+                </p>
+                <span mat-line></span>
+              </mat-list-item>
+            </mat-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </div>
+</div>

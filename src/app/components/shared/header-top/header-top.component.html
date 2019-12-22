@@ -1,0 +1,44 @@
+<nav class="header-top-header">
+  <button mat-icon-button
+          (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div *ngIf="isMobile">
+    <a routerLink="/home" class="logo-text">
+      <span>.NETSurfer</span>
+    </a>
+  </div>
+
+  <div *ngIf="!isMobile">
+    <button mat-button routerLink="/home">Home</button>
+    <button mat-button routerLink="/about">About</button>
+    <button mat-button routerLink="/contact">Contact</button>
+  </div>
+
+  <div class="flex-spacer"></div>
+  <div *ngIf="isAuthenticated()">
+    <button mat-icon-button
+            matTooltip="Admin"
+            [matMenuTriggerFor]="adminMenu">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <mat-menu #adminMenu="matMenu">
+      <div *ngFor="let menuItem of adminMenuItems">
+        <button mat-menu-item routerLink="{{menuItem.routerLink}}"
+                fxLayout="row"
+                fxLayoutAlign="start center">
+          <mat-icon>{{menuItem.icon}}</mat-icon>
+          <span>{{menuItem.name}}</span>
+        </button>
+      </div>
+      <button mat-menu-item routerLink="#"
+              (click)="signOut()"
+              fxLayout="row"
+              fxLayoutAlign="start center">
+        <mat-icon>input</mat-icon>
+        <span>Sign Out</span>
+      </button>
+    </mat-menu>
+  </div>
+</nav>

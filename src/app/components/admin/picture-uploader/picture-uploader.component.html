@@ -1,0 +1,84 @@
+<div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="15px">
+  <div fxFlex="33" fxLayoutAlign="space-around center">
+    <div *ngIf="currentPictureBase64; then pictureBlock else errorPictureBlock"></div>
+    <ng-template class="picture-uploader-image" #pictureBlock>
+      <div class="picture-uploader-image">
+        <img src="data:{{currentPictureMimeType}};base64,{{currentPictureBase64}}">
+      </div>
+    </ng-template>
+    <ng-template #errorPictureBlock>
+      <div class="picture-uploader-image">
+        <img src="../../../../assets/Images/default/default-upload.png" />
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="picture-uploader-button" fxLayout="row" fxLayoutGap="5px" fxLayoutWrap="wrap" fxFlex="33">
+    <div>
+      <button mat-raised-button
+              [disabled]="!isBrowsable">
+        <label for="file-input">
+          Browse
+        </label>
+      </button>
+      <input type="file" id="file-input" accept="image/*" (change)="fileInputOnChange($event)" fxHide>
+    </div>
+
+    <div>
+      <button mat-raised-button
+              class="mat-primary"
+              (click)="uploadPicture()"
+              [disabled]="!isUploaded">
+        Upload
+      </button>
+    </div>
+
+    <div>
+      <button mat-raised-button
+              class="mat-accent"
+              (click)="cancelPicture()"
+              [disabled]="!isCancelable">
+        Cancel
+      </button>
+    </div>
+
+    <div>
+      <button mat-raised-button
+              class="mat-warn"
+              (click)="removePicture()"
+              [disabled]="!isRemovable">
+        Remove
+      </button>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutGap="20px" fxFlex="33">
+    <div *ngIf="uploadedPictureFile; then blankInfoBlock else uploadedInfoBlock"></div>
+    <ng-template #blankInfoBlock>
+      <mat-chip-list>
+        <mat-chip color="primary" selected="true">
+          {{uploadedPictureFile.name}}
+        </mat-chip>
+        <mat-chip color="accent" selected="true">
+          {{uploadedPictureFile.size/1024/1024 | number:'.2'}} MB
+        </mat-chip>
+        <mat-chip color="warn" selected="true">
+          {{currentStatus}}
+        </mat-chip>
+      </mat-chip-list>
+    </ng-template>
+    <ng-template #uploadedInfoBlock>
+      <mat-chip-list>
+        <mat-chip color="primary" selected="true">
+          Name
+        </mat-chip>
+        <mat-chip color="accent" selected="true">
+          Size
+        </mat-chip>
+        <mat-chip color="warn" selected="true">
+          {{currentStatus}}
+        </mat-chip>
+      </mat-chip-list>
+    </ng-template>
+  </div>
+</div>

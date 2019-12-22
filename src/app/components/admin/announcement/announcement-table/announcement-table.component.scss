@@ -1,0 +1,23 @@
+.mat-column-announcementId,
+.mat-column-showFlag {
+    max-width: 64px;
+}
+
+.mat-column-postDate {
+    max-width: 124px;
+}
+
+.mat-column-content {
+    max-width: 85%;
+}
+
+.mat-column-status,
+.mat-column-action {
+    max-width: 100px;
+    text-align: right;
+}
+
+mat-header-cell.mat-column-status {
+    display: flex;
+    justify-content: space-around;
+}

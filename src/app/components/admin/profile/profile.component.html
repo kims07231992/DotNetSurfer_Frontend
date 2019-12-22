@@ -1,0 +1,161 @@
+<div class="primary-header">
+  <h1>{{title}}</h1>
+</div>
+
+<div *ngIf="user">
+  <div class="profile-container">
+    <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+      <div class="profile-content" fxFlex="35">
+        <mat-card>
+          <div class="profile-image">
+            <img *ngIf="user.pictureUrl" src="{{user.pictureUrl}}"
+                 alt="{{user.name}}">
+            <img *ngIf="!user.pictureUrl" src="../../../../assets/Images/default/default-user.png"
+                 alt="default-user">
+          </div>
+          <div class="profile-content">
+            <div class="profile-name mat-h2">
+              <div *ngIf="user.name">{{user.name}}</div>
+              <div *ngIf="!user.name">Name</div>
+            </div>
+            <div class="profile-title mat-h3">
+              <div *ngIf="user.title">{{user.title}}</div>
+              <div *ngIf="!user.title">Title</div>
+            </div>
+            <div class="profile-introduction mat-h5">
+              <div *ngIf="user.introduction">{{user.introduction}}</div>
+              <div *ngIf="!user.introduction">Introduction</div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <div fxFlex="5"><span class="flex-spacer"></span></div>
+      <div class="profile-forms" fxFlex="65">
+        <mat-card>
+          <mat-horizontal-stepper [linear]="true" #stepper="matHorizontalStepper">
+            <mat-step [stepControl]="profileFormControl">
+              <form [formGroup]="profileFormControl"
+                    fxLayout="column" fxLayoutGap="15px">
+                <ng-template matStepLabel>Fill out your profile</ng-template>
+                <mat-form-field hintLabel="Max 20 characters">
+                  <input [type]="text"
+                         name="name"
+                         matInput #nameInput
+                         [formControl]="profileFormControl.controls['name']"
+                         placeholder="Name"
+                         [(ngModel)]="user.name"
+                         required>
+                  <mat-hint align="end">{{nameInput.value?.length || 0}}/20</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field hintLabel="Please enter your email">
+                  <input [type]="text"
+                         name="email"
+                         matInput #emailInput
+                         [formControl]="profileFormControl.controls['email']"
+                         placeholder="Email"
+                         [(ngModel)]="user.email"
+                         required>
+                  <mat-error *ngIf="profileFormControl.controls.email.invalid">Not a valid email</mat-error>
+                </mat-form-field>
+
+                <mat-form-field hintLabel="Max 20 characters">
+                  <input [type]="text"
+                         name="title"
+                         matInput #titleInput
+                         [formControl]="profileFormControl.controls['title']"
+                         placeholder="Title"
+                         [(ngModel)]="user.title">
+                  <mat-hint align="end">{{titleInput.value?.length || 0}}/20</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field hintLabel="Please enter your phone number">
+                  <input [type]="text"
+                         name="phone"
+                         matInput #phoneInput
+                         [formControl]="profileFormControl.controls['phone']"
+                         placeholder="Phone"
+                         [(ngModel)]="user.phone">
+                  <mat-error *ngIf="profileFormControl.controls.phone.invalid">Not a valid phone number</mat-error>
+                </mat-form-field>
+
+                <mat-form-field hintLabel="Max 100 characters">
+                  <input [type]="text"
+                         name="adress"
+                         matInput #addressInput
+                         [formControl]="profileFormControl.controls['address']"
+                         placeholder="Address"
+                         [(ngModel)]="user.address">
+                  <mat-hint align="end">{{addressInput.value?.length || 0}}/100</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field hintLabel="Max 100 characters">
+                  <input [type]="text"
+                         name="introduction"
+                         matInput #introductionInput
+                         [formControl]="profileFormControl.controls['introduction']"
+                         placeholder="Introduction"
+                         [(ngModel)]="user.introduction">
+                  <mat-hint align="end">{{introductionInput.value?.length || 0}}/100</mat-hint>
+                </mat-form-field>
+
+                <div fxFlexAlign="end">
+                  <div fxLayout="row" fxLayoutAlign="end stretch">
+                    <button mat-raised-button color="primary" matStepperNext [disabled]="profileFormControl.invalid">Next</button>
+                  </div>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step>
+              <div fxLayout="column" fxLayoutGap="15px">
+                <ng-template matStepLabel>Upload your picture</ng-template>
+                <app-picture-uploader *ngIf="user"
+                                      [picture]="user.picture"
+                                      [pictureMimeType]="user.pictureMimeType"
+                                      (uploadedPictureBase64)="uploadPictureBase64($event)"
+                                      (uploadedPictureMimeType)="uploadPictureMimeType($event)">
+                </app-picture-uploader>
+
+                <div fxFlexAlign="end">
+                  <div fxLayout="row" fxLayoutAlign="end stretch" fxLayoutGap="5px">
+                    <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+                    <button mat-raised-button color="primary" matStepperNext>Next</button>
+                  </div>
+                </div>
+              </div>
+            </mat-step>
+
+            <mat-step [stepControl]="passwordFormGroup">
+              <form [formGroup]="passwordFormControl"
+                    (ngSubmit)="updateProfile()"
+                    fxLayout="column" fxLayoutGap="15px">
+                <ng-template matStepLabel>Done</ng-template>
+                <h3 class="profile-content mat-h3">To save your information, please input your password</h3>
+                <mat-form-field hintLabel="Min 6 characters">
+                  <input [type]="isPasswordHide ? 'password' : 'text'"
+                         name="password"
+                         matInput #passwordInput
+                         [formControl]="passwordFormControl.controls['password']"
+                         placeholder="Password"
+                         [(ngModel)]="user.password"
+                         required>
+                  <mat-icon matSuffix (click)="isPasswordHide = !isPasswordHide">
+                    {{isPasswordHide ? 'visibility' : 'visibility_off'}}
+                  </mat-icon>
+                  <mat-hint align="end">{{passwordInput.value?.length || 0}}/255</mat-hint>
+                </mat-form-field>
+
+                <div fxFlexAlign="end">
+                  <div fxLayout="row" fxLayoutAlign="end stretch" fxLayoutGap="5px">
+                    <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+                    <button mat-raised-button color="primary" [disabled]="passwordFormControl.invalid">Save</button>
+                  </div>
+                </div>
+              </form>
+            </mat-step>
+          </mat-horizontal-stepper>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

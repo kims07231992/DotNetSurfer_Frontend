@@ -1,0 +1,22 @@
+<div class="about-container" @fadeInAnimation>
+  <header class="header-background">
+    <div class="header-section">
+      <div class="header-headline">
+        <h1 class="mat-h1" fxHide.xs>Ideas and perspectives you won’t find anywhere else.</h1>
+        <h2>I deliver the best stories and ideas on the topics you care about most straight to your life.</h2>
+      </div>
+    </div>
+  </header>
+
+  <mat-tab-group>
+    <mat-tab label="Summary">
+      <app-about-summary></app-about-summary>
+    </mat-tab>
+    <mat-tab label="Frontend">
+      <app-about-frontend></app-about-frontend>
+    </mat-tab>
+    <mat-tab label="Backend">
+      <app-about-backend></app-about-backend>
+    </mat-tab>
+  </mat-tab-group>
+</div>

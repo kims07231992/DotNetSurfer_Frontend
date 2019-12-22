@@ -1,0 +1,49 @@
+@import '../../../../../../styles/constants';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.article-wrapper {
+  padding: 20px 70px 0px;
+  display: block;
+  text-align: center;
+
+  @media (max-width: $breakpoint-width-mobile) {
+    padding: 20px 15px 0px;
+  }
+}
+
+.article-toc-and-content {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 940px;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-width-tablet) {
+    flex-direction: column;
+  }
+}
+
+.article-content {
+  flex-grow: 1;
+  width: 80%;
+
+  @media (max-width: $breakpoint-width-tablet) {
+    width: 100%;
+  }
+}
+
+.comment-content {
+  width: 100%;
+  max-width: 940px;
+  padding-top: 30px;
+  display: inline-block;
+
+  @media ($breakpoint-width-mobile) {
+    padding-top: 15px;
+  }
+}

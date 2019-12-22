@@ -1,0 +1,36 @@
+<div *ngIf="!isLoaded" class="spinner-container-medium">
+    <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="isLoaded">
+    <div fxLayout="row wrap">
+        <div *ngFor="let feature of features" fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33" fxFlex.lg="25" fxFlex.xl="25" fxLayoutAlign="space-around center">
+            <mat-card class="feature-card mat-elevation-z8">
+                <mat-card-header fxLayout="row">
+                    <mat-card-title>
+                        <h1 class="mat-h1">{{feature.name}}</h1>
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        <h2 *ngIf="feature.version" class="mat-h2">Version: {{feature.version}}</h2>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <h4 class="mat-h4">{{feature.description}}</h4>
+                </mat-card-content>
+                <mat-card-actions fxLayout="row wrap">
+                    <a *ngIf="feature.githubUrl" mat-button href={{feature.githubUrl}} target="_blank">
+                        <i class="fa fa-github fa-lg"></i>
+                        <span>&nbsp;Github</span>
+                    </a>
+                    <a *ngIf="feature.documentUrl" mat-button href={{feature.documentUrl}} target="_blank">
+                        <i class="fa fa-book fa-lg"></i>
+                        <span>&nbsp;Docs</span>
+                    </a>
+                    <a *ngIf="feature.guideUrl" mat-button href={{feature.guideUrl}} target="_blank">
+                        <i class="fa fa-info fa-lg"></i>
+                        <span>&nbsp;Guide</span>
+                    </a>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

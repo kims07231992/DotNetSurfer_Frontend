@@ -1,0 +1,17 @@
+@import '../../../../styles/constants';
+
+.home-container {
+  padding: 20px 10%;
+}
+
+.home-article-card-container,
+.home-article-list-container,
+.home-announcement-container {
+  padding: 0 15px;
+}
+
+@media (max-width: $breakpoint-width-mobile) {
+  .home-container {
+    padding: 5px 15px;
+  }
+}

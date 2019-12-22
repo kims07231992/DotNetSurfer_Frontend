@@ -1,0 +1,19 @@
+@mixin header-top-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  app-header-top {
+    color: mat-color($primary, default-contrast);
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    .header-top-header {
+      background: mat-color($primary);
+    }
+  }
+}

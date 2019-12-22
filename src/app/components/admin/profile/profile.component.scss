@@ -1,0 +1,42 @@
+@import '../../../../styles/constants';
+
+$profile-container-padding-desktop: 25px 15%;
+$profile-container-padding-tablet: 20px 5%;
+$profile-container-padding-mobile: 0 0;
+
+.profile-container {
+    padding: $profile-container-padding-desktop;
+}
+
+.profile-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.profile-content {
+    text-align: center;
+}
+
+.profile-name, .profile-title {
+    margin: 0 0 5px;
+}
+
+.profile-introduction {
+    color: rgba(0,0,0,.54) !important;
+}
+
+/*Tablet*/
+@media (max-width: $breakpoint-width-tablet) {
+    .profile-container {
+        padding: $profile-container-padding-tablet;
+    }
+}
+
+/*Mobile*/
+@media (max-width: $breakpoint-width-mobile) {
+    .profile-container {
+        padding: $profile-container-padding-mobile;
+    }
+}

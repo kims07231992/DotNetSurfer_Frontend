@@ -1,0 +1,36 @@
+@mixin about-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  app-about {
+    .header-background {
+      background: mat-color($primary);
+    }
+
+    .header-headline {
+      color: mat-color($primary, default-contrast);
+    }
+  }
+
+  app-about-summary {
+    .about-row {
+      color: mat-color($foreground, secondary-text);
+    }
+  }
+
+  app-about-frontend, app-about-backend {
+    .feature-card {
+      width: 300px;
+      height: 200px;
+      margin: 35px 0;
+    }
+
+    .feature-card .mat-card-actions {
+      position: absolute;
+      top: 150px;
+    }
+  }
+}

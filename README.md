@@ -1,27 +1,36 @@
-# DotnetsurferFrontend
+# .NETSurfer Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+## Summary
 
-## Development server
+.NETSurfer Frontend is an website using Angaulr 8.0
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+User Page
 
-## Code scaffolding
+![Alt text](https://github.com/kims07231992/DotNetSurfer_Frontend/blob/master/README_Picture1.PNG)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+Admin Page
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Alt text](https://github.com/kims07231992/DotNetSurfer_Frontend/blob/master/README_Picture2.PNG)
 
-## Running end-to-end tests
+----------------------------------------------------------------------------------------------------------------
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Features
 
-## Further help
+* API based resource assess with API communciation
+* Role based authentication with JWT
+* Consistent HttpResponse handling
+* Reponsive UI by using Flex Layout
+* Disqus comment 
+* Client Friendly UI with Material UI and Angular Animations
+ 
+## Stacks
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Angular 8.0
+* Angular Material 8.0
+* Flex Layout
+* ngx-disqus
+* ngx-quill
+* RxJS

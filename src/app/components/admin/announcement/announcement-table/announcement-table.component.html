@@ -1,0 +1,70 @@
+<div class="primary-header">
+  <h1>{{title}}</h1>
+</div>
+
+<div class="admin-table-container mat-elevation-z8">
+    <div class="admin-table-header">
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+    </div>
+
+    <div *ngIf="!isLoaded" class="admin-table-spinner-container">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="isLoaded">
+        <mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="announcementId">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
+                <mat-cell *matCellDef="let announcement"> {{announcement.announcementId}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="postDate">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> PostDate </mat-header-cell>
+                <mat-cell *matCellDef="let announcement"> {{announcement.postDate | date}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="showFlag">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Show </mat-header-cell>
+                <mat-cell *matCellDef="let announcement">
+                    <mat-icon>{{announcement.showFlag ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="content">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Content </mat-header-cell>
+                <mat-cell *matCellDef="let announcement"> {{announcement.content}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+                <mat-cell *matCellDef="let announcement">
+                    <mat-chip-list>
+                        <mat-chip color="primary" selected="true">{{announcement.status.currentStatus}}</mat-chip>
+                    </mat-chip-list>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef>
+                    <button mat-icon-button color="accent" (click)="createAnnouncement()">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let announcement">
+                    <button mat-icon-button color="primary" (click)="editAnnouncement(announcement.announcementId)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="deleteAnnouncement(announcement.announcementId)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+        </mat-table>
+    </div>
+    <mat-paginator [pageSizeOptions]="[15, 25, 100]"></mat-paginator>
+</div>

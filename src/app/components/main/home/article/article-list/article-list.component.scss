@@ -1,0 +1,63 @@
+@import '../../../../../../styles/constants';
+
+$article-list-header-font-size: 45px;
+$article-list-header-margin-bottom: 30px;
+$article-list-contents-padding: 5px 0 5px 0;
+$article-list-content-topic-font-size: 24px;
+$article-list-content-topic-font-margin-bottom: 16px;
+$article-list-content-title-font-size: 34px;
+$article-list-content-title-font-margin-bottom: 34px;
+
+.article-list-expand,
+.article-list-expand-statement {
+    display: flex;
+    justify-content: center;
+}
+
+.article-list a, a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: black;
+}
+
+.article-list-header .mat-display-2 {
+    font-size: $article-list-header-font-size;
+    margin-bottom: $article-list-header-margin-bottom;
+}
+
+.article-list-content {
+    padding: $article-list-contents-padding;
+}
+
+.article-list-content .mat-h1 {
+    font-size: $article-list-content-topic-font-size;
+    margin-bottom: $article-list-content-topic-font-margin-bottom;
+}
+
+.article-list-content .mat-display-1 {
+    font-size: $article-list-content-title-font-size;
+    margin-bottom: $article-list-content-title-font-margin-bottom;
+}
+
+.article-list-image .mat-card-image {
+    width: 188px;
+    height: 105px;
+    margin: $article-list-contents-padding;
+}
+
+@media (max-width: $breakpoint-width-mobile) {
+
+    .article-list-header .mat-display-2 {
+        font-size: calc( #{$article-list-header-font-size} * 2 / 3 );
+        margin-bottom: calc( #{$article-list-header-margin-bottom} / 2 );
+    }
+
+    .article-list-content .mat-h1 {
+        font-size: calc( #{$article-list-content-topic-font-size} * 2 / 3 );
+        margin-bottom: calc( #{$article-list-content-topic-font-margin-bottom} / 2 );
+    }
+
+    .article-list-content .mat-display-1 {
+        font-size: calc( #{$article-list-content-title-font-size} * 2 / 3 );
+        margin-bottom: calc( #{$article-list-content-title-font-margin-bottom} / 2 );
+    }
+}

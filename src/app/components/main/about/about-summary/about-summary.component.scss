@@ -1,0 +1,75 @@
+@import '../../../../../styles/constants';
+
+$about-row-margin-desktop: 60px 0px;
+$about-row-margin-mobile: 15px 0px;
+
+.about-promo {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        font-size: 25px;
+        font-weight: 400;
+        margin: 0 0 16px 0;
+        padding: 0;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        margin: 0 0 24px 0;
+        padding: 0;
+    }
+}
+
+.about-row {
+    display: flex;
+    max-width: 920px;
+    margin: $about-row-margin-desktop;
+}
+
+.about-row {
+    max-width: 90%;
+}
+
+.about-reverse-row {
+    flex-direction: row-reverse;
+}
+
+.about-promo-img,
+.about-promo-desc {
+    width: 50%;
+}
+
+.about-promo-img > img {
+    width: 100%;
+    max-width: 500px;
+    min-width: 150px;
+    padding: 10px
+}
+.about-promo-img {
+    text-align: center;
+}
+
+.about-promo-desc {
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: $breakpoint-width-mobile) {
+    about-promo {
+        padding: 0 0;
+    }
+
+    .about-row {
+        margin: $about-row-margin-mobile;
+    }
+
+    .about-promo-img > img {
+      margin-top: 50px;
+    }
+}

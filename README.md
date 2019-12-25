@@ -24,11 +24,16 @@ Admin Page
 ## Features
 
 * API based resource assess with API communciation
+* CRUD: create, update and remove topics and articles with API communication
 * Role based authentication with JWT
 * Consistent HttpResponse handling
 * Reponsive UI by using Flex Layout
 * Disqus comment 
-* Client Friendly UI with Material UI and Angular Animations
+* Client Friendly UI with Material UI
+* Lazy loading modules
+* SASS
+* Animations with ng-animate
+* Angular Pipes
  
 ## Stacks
 

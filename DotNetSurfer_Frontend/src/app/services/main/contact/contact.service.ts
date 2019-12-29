@@ -44,14 +44,6 @@ export class ContactService {
           imageUrl: '/assets/Images/contact/experiences/Hyundai_Mobis.jpg',
           fromDate: new Date('1/1/16'),
           toDate: new Date('11/1/16')
-        },
-        {
-          name: 'Republic of Korea Army',
-          title: 'Squad Leader',
-          location: 'Gyeonggi-do, South Korea',
-          imageUrl: '/assets/Images/contact/experiences/Republic_Of_Korea_Army.png',
-          fromDate: new Date('2/1/12'),
-          toDate: new Date('11/1/13')
         }
       ];
     }

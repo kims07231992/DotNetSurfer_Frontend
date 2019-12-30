@@ -10,14 +10,17 @@ Overview
 
 ![Alt text](https://github.com/kims07231992/DotNetSurfer_Frontend/blob/master/README_Picture1.PNG)
 
-User Page
+User Page(Desktop)
 
 ![Alt text](https://github.com/kims07231992/DotNetSurfer_Frontend/blob/master/README_Picture2.PNG)
 
+User Page(Mobile)
+
+![Alt text](https://github.com/kims07231992/DotNetSurfer_Frontend/blob/master/README_Picture3.PNG)
 
 Admin Page
 
-![Alt text](https://github.com/kims07231992/DotNetSurfer_Frontend/blob/master/README_Picture3.PNG)
+![Alt text](https://github.com/kims07231992/DotNetSurfer_Frontend/blob/master/README_Picture4.PNG)
 
 ----------------------------------------------------------------------------------------------------------------
 

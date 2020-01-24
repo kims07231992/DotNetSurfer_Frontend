@@ -76,14 +76,6 @@ export class ContactService {
           imageUrl: '/assets/Images/contact/educations/DGU.png',
           fromDate: new Date('3/1/11'),
           toDate: new Date('2/1/18')
-        },
-        {
-          name: 'University of Nebraska',
-          title: 'Exchange Program Student',
-          location: '',
-          imageUrl: '/assets/Images/contact/educations/UNK.png',
-          fromDate: new Date('8/1/16'),
-          toDate: new Date('12/1/16')
         }
       ];
     }

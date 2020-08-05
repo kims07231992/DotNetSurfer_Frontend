@@ -14,17 +14,25 @@ export class ContactService {
     if (this.experiences == null) {
       this.experiences = [
         {
+          name: 'Amazon',
+          title: 'Software Development Engineer I',
+          location: 'Los Angeles Metropolitan Area',
+          imageUrl: '/assets/Images/contact/experiences/Amazon.png',
+          fromDate: new Date('9/1/20'),
+          toDate: null
+        },
+        {
           name: 'iHerb Inc.',
           title: 'Jr. Software Developer II',
-          location: 'Orange County, CA',
+          location: 'Los Angeles Metropolitan Area',
           imageUrl: '/assets/Images/contact/experiences/iHerb.jpg',
           fromDate: new Date('1/1/19'),
-          toDate: null
+          toDate: new Date('8/1/20')
         },
         {
           name: 'AmWest Funding Corp.',
           title: 'Jr. Software Developer I',
-          location: 'Orange County, CA',
+          location: 'Los Angeles Metropolitan Area',
           imageUrl: '/assets/Images/contact/experiences/AmWest.png',
           fromDate: new Date('2/1/18'),
           toDate: new Date('12/1/18')
@@ -33,7 +41,7 @@ export class ContactService {
           name: 'University of Southern California',
           title: 'Research Assistant',
           imageUrl: '/assets/Images/contact/experiences/USC.png',
-          location: 'Los Angeles, CA',
+          location: 'Los Angeles Metropolitan Area',
           fromDate: new Date('6/1/17'),
           toDate: new Date('8/1/17')
         },

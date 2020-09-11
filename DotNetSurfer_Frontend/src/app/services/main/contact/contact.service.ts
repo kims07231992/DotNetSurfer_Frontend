@@ -23,19 +23,11 @@ export class ContactService {
         },
         {
           name: 'iHerb Inc.',
-          title: 'Jr. Software Developer II',
+          title: 'Software Developer I',
           location: 'Los Angeles Metropolitan Area',
           imageUrl: '/assets/Images/contact/experiences/iHerb.jpg',
           fromDate: new Date('1/1/19'),
           toDate: new Date('9/1/20')
-        },
-        {
-          name: 'AmWest Funding Corp.',
-          title: 'Jr. Software Developer I',
-          location: 'Los Angeles Metropolitan Area',
-          imageUrl: '/assets/Images/contact/experiences/AmWest.png',
-          fromDate: new Date('2/1/18'),
-          toDate: new Date('12/1/18')
         },
         {
           name: 'University of Southern California',

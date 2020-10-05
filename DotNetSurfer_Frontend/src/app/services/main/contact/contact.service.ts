@@ -18,7 +18,7 @@ export class ContactService {
           title: 'Software Development Engineer I',
           location: 'Los Angeles Metropolitan Area',
           imageUrl: '/assets/Images/contact/experiences/Amazon.png',
-          fromDate: new Date('10/1/20'),
+          fromDate: new Date('11/1/20'),
           toDate: null
         },
         {
@@ -27,7 +27,7 @@ export class ContactService {
           location: 'Los Angeles Metropolitan Area',
           imageUrl: '/assets/Images/contact/experiences/iHerb.jpg',
           fromDate: new Date('1/1/19'),
-          toDate: new Date('9/1/20')
+          toDate: new Date('10/1/20')
         },
         {
           name: 'University of Southern California',

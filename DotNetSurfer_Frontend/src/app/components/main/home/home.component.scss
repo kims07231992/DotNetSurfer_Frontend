@@ -1,7 +1,11 @@
 @import '../../../../styles/constants';
 
-.home-container {
-  padding: 20px 10%;
+.home-banner-container {
+  padding: 0;
+}
+
+.home-article-container {
+  padding: 0 10%;
 }
 
 .home-article-card-container,
@@ -11,7 +15,7 @@
 }
 
 @media (max-width: $breakpoint-width-mobile) {
-  .home-container {
+  .home-article-container {
     padding: 5px 15px;
   }
 }

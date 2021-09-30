@@ -1,4 +1,4 @@
-<div class="article-card-container" fxHide.sm fxHide.xs>
+<div class="article-card-container">
     <div class="article-card-header">
         <h1 class="mat-display-2">Top Stories</h1>
     </div>
@@ -22,7 +22,7 @@
                              alt="{{article.user.name}}">
                         <img *ngIf="!article.user.pictureUrl"
                              mat-card-avatar
-                             src="/assets/Images/default/default-user.png"
+                             src="/assets/images/default/default-user.png"
                              alt="default-user">
                         <mat-card-title>{{article.user.name}}</mat-card-title>
                         <mat-card-subtitle>{{article.postDate | date}}</mat-card-subtitle>
@@ -33,7 +33,7 @@
                          alt="{{article.title}}">
                     <img *ngIf="!article.pictureUrl"
                          mat-card-image
-                         src="/assets/Images/default/default-article.jpg"
+                         src="/assets/images/default/default-article.jpg"
                          alt="default-article">
                     <mat-card-content>
                         <h3 class="mat-subheading-1">{{article.title}}</h3>

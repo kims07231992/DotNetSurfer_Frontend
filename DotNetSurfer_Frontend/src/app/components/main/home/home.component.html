@@ -8,7 +8,10 @@
 </header>
 
 <div class="home-container">
-    <app-article-card class="home-article-card-container"></app-article-card>
-
-    <app-article-list class="home-article-list-container"></app-article-list>
+    <app-banner class="home-banner-container" fxHide.sm fxHide.xs></app-banner>
+    
+    <div class="home-article-container">
+      <app-article-card class="home-article-card-container" fxHide.sm fxHide.xs></app-article-card>
+      <app-article-list class="home-article-list-container"></app-article-list>
+    </div>
 </div>

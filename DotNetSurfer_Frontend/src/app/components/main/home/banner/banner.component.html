@@ -1,0 +1,7 @@
+<div class="banner-container">
+  <div *ngIf="!isMobile">
+    <video autoplay muted loop oncanplay="this.play()" onloadedmetadata="this.muted=true" class="banner-video">
+      <source src="{{video}}" type="video/mp4">
+    </video>
+  </div>
+</div>

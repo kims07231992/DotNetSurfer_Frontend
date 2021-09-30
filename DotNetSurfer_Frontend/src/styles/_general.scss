@@ -36,11 +36,11 @@ mat-sidenav-content {
 }
 
 .header-section {
-  padding: 75px 0px;
+  padding: 120px 0 75px 0;
   text-align: center;
 
   @media (max-width: $breakpoint-width-mobile) {
-    padding: 55px 5px 5px 5px;
+    padding: 70px 5px 0 5px;
   }
 }
 

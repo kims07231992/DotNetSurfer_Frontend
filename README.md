@@ -2,7 +2,7 @@
 
 .NETSurfer Frontend is a blog type SPA web application using Angaulr 8.0 that communicates to [.NETSurfer Backend](https://github.com/kims07231992/DotNetSurfer_Backend) API
 
-## [View Demo](https://dotnetsurfer.dev)
+## [View Demo]([https://dotnetsurfer.dev](https://dotnetsurferfrontend.azurewebsites.net/))
 
 ### Overview
 
